@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JOVI FlowCam</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://kit.fontawesome.com/a86f4eb0a3.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="text-white bg-black">
+    <header class="bg-[#120052] py-1 px-4 w-auto flex items-center justify-between">
+        <nav class="flex">
+                <a href="#">
+                    <button type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center">
+                        <i class="fa-solid fa-user text-[25px]" style="color: rgb(247, 247, 247);"></i>
+                    </button>
+                </a>
+                <div class="text-white bg-[#120052] fixed w-auto top-15 p-4 -left-1 hidden">
+                    <ul class="font-light flex flex-col">
+                        <li>Opção 1</li>
+                        <li>Opção 2</li>
+                        <li>Opção 3</li>
+                    </ul>
+                </div>
+        </nav>
+        <div class="flex justify-center">
+            <img src="/dist/images/logo-jovi.png" alt="Logo da JOVI" class="w-20">
+        </div>
+
+        <div>
+        </div>
+
+    </header>
+
+    <main>
+        <div id="dialog-camera" class="absolute w-screen bg-stone-900 z-10">
+            <div class="w-full h-full" id="video-preview-container">
+                <video class="w-full h-full" autoplay id="video-preview"></video>
+                <canvas id="canvas" class="hidden"></canvas>
+                <div class="absolute bottom-3 z-10 flex p2 justify-around items-center w-full landscape:flex-col reverse landscape:right-3 landscape:w-fit landscape:top-0 landscape:bottom-0">
+                    <i id="btn-close-dialog" class="fa-solid fa-xmark text-white text-3xl"></i>
+                    <i id="btn-camera" class="fa-solid fa-camera text-white text-4xl"></i>
+                    <i id="btn-toggle-camera" class="fa-solid fa-camera-rotate text-white text-4xl"></i>
+                </div>
+            </div>
+
+            <div id="photo-preview-container" class="w-full h-full items-center justify-center hidden">
+
+                <div class="w-full h-full flex items-center justify-center text-white">
+                    <img class="w-full h-auto" crossorigin="anonymous" src="/dist/images/arara.jpg" alt="Foto previsualizada" id="photo-preview">
+                </div>
+
+                <div id="actions-preview" class="absolute bottom-3 z-10 flex p-2 justify-around items-center w-full landsacpe:flex-col-reverse landscape:right-3 landscape:w-fit landscape:top-0 landscape:bottom-0">
+                    <button id="btn-repeat" class="text-white px-3 py-2">Repetir</button>
+                    <button id="btn-ok" class="text-white px-3 py-2">OK</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Pré visualiza a camera
+        let currentFacingMode = 'environment';
+        const videoPreview = document.querySelector('#video-preview');
+
+        const startCamera = (facingMode = 'environment') => {
+            stopCamera();
+            navigator.mediaDevices.getUserMedia({
+                video: {
+                    facingMode,
+                    width: {
+                        max: 1980,
+                        ideal: 297
+                    },
+                    height: {
+                        max: 1080,
+                        ideal: 420
+                    }
+                }
+            }).then((stream) => {
+                videoPreview.srcObject = stream;
+            })
+        }
+
+        const stopCamera = () => {
+            if (videoPreview.srcObject) {
+                const stream = videoPreview.srcObject;
+                const tracks = stream.getTracks().forEach((track) => track.stop());
+            }
+        }
+
+        startCamera(currentFacingMode);
+
+        // tirar uma foto
+        const btnCamera = document.querySelector('#btn-camera');
+        const canvas = document.querySelector('#canvas');
+        const videoPreviewContainer = document.querySelector('#video-preview-container');
+        const photoPreviewContainer = document.querySelector('#photo-preview-container');
+        const photoPreview = document.querySelector('#photo-preview');
+
+        btnCamera.addEventListener('click', () => {
+            canvas.width = videoPreview.videoWidth;
+            canvas.height = videoPreview.videoHeight;
+            const context = canvas.getContext('2d');
+
+            context.drawImage(videoPreview, 0, 0);
+
+            canvas.toBlob((blob) => {
+                photoPreview.src = URL.createObjectURL(blob);
+                photoPreviewContainer.classList.replace('hidden', 'flex');
+                videoPreviewContainer.classList.toggle('hidden');
+            });
+        });
+
+        // Troca entre as cameras
+        const btnToggleCamera = document.querySelector('#btn-toggle-camera');
+        btnToggleCamera.addEventListener('click', () => {
+            if (currentFacingMode == 'environment') {
+                currentFacingMode = 'user';
+            } else {
+                currentFacingMode = 'environment'
+            }
+
+            startCamera(currentFacingMode);
+        })
+
+
+    </script>
+  </body>
+</html>
