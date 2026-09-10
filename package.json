@@ -6,7 +6,6 @@
   "name": "joviflowcam",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/css/styles.css --watch"
   },
