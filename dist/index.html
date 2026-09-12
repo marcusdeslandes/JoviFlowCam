@@ -33,14 +33,16 @@
     </header>
 
     <main>
-        <div id="dialog-camera" class="absolute w-screen bg-stone-900 z-10">
-            <div class="w-full h-full" id="video-preview-container">
-                <video class="w-full h-full" autoplay id="video-preview"></video>
+        <div id="dialog-camera" class="absolute w-screen bg-zinc-950 z-10 p-12">
+            <div class="flex justify-center w-full h-full" id="video-preview-container">
+                <video class="w-5/6 h-full" autoplay id="video-preview"></video>
                 <canvas id="canvas" class="hidden"></canvas>
-                <div class="absolute bottom-3 z-10 flex p2 justify-around items-center w-full landscape:flex-col reverse landscape:right-3 landscape:w-fit landscape:top-0 landscape:bottom-0">
-                    <i id="btn-close-dialog" class="fa-solid fa-xmark text-white text-3xl"></i>
-                    <i id="btn-camera" class="fa-solid fa-camera text-white text-4xl"></i>
-                    <i id="btn-toggle-camera" class="fa-solid fa-camera-rotate text-white text-4xl"></i>
+                <div class="absolute -bottom-26 z-10 flex justify-around items-center w-4/5 landscape:flex-col-reverse landscape:right-3 landscape:w-fit landscape:top-0 landscape:bottom-0">
+                    <i id="btn-close-dialog" class="fa-solid fa-images text-white text-2xl"></i>
+
+                    <button id="btn-camera" type="button" class="flex items-center justify-center w-18 h-18 bg-white hover:bg-gray-400 text-white rounded-full shadow-lg transition-transform active:scale-95 focus:outline-none"></button>
+                    
+                    <i id="btn-toggle-camera" class="fa-solid fa-camera-rotate text-white text-3xl"></i>
                 </div>
             </div>
 
@@ -50,14 +52,19 @@
                     <img class="w-full h-auto" crossorigin="anonymous" src="/dist/images/arara.jpg" alt="Foto previsualizada" id="photo-preview">
                 </div>
 
-                <div id="actions-preview" class="absolute bottom-3 z-10 flex p-2 justify-around items-center w-full landsacpe:flex-col-reverse landscape:right-3 landscape:w-fit landscape:top-0 landscape:bottom-0">
-                    <button id="btn-repeat" class="text-white px-3 py-2">Repetir</button>
-                    <button id="btn-ok" class="text-white px-3 py-2">OK</button>
-                </div>
+                <div id="actions-preview" class="absolute -bottom-20 z-10 flex p-2 justify-around items-center w-full landsacpe:flex-col-reverse landscape:right-3 landscape:w-fit landscape:top-0 landscape:bottom-0">
+                    <button id="btn-repeat" class="text-white font-medium px-3 py-2">Repetir</button>
+                    <button id="btn-ok" class="text-white font-medium px-3 py-2">OK</button>
+                </div>               
             </div>
-        </div>
+        </div>                
+        <div class="absolute z-10 bottom-1 flex p-2 justify-around items-center w-full">
+            <button class="text-white  font-medium hover:px-4 hover:py-1 hover:bg-[#120052] hover:rounded-full">Foto</button>
+            <button class="text-white  font-medium hover:px-4 hover:py-1 hover:bg-[#120052] hover:rounded-full">Video</button>
+            <button class="text-white  font-medium hover:px-4 hover:py-1 hover:bg-[#120052] hover:rounded-full">Documento</button>
+        </div> 
     </main>
-
+    
     <script>
         // Pré visualiza a camera
         let currentFacingMode = 'environment';
