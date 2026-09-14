@@ -15,6 +15,7 @@ botaoFoto.addEventListener('click', () => {
     botaoDocumento.classList.remove("bg-[#120052]",  "rounded-full");
     botaoFoto.classList.add("bg-[#120052]",  "rounded-full")
 })
+
 botaoVideo.addEventListener('click', () => {
     // Interação entre botões de tipo de câmera e botão da câmera
     botaoCamera.classList.replace('bg-white', 'bg-red-700');
@@ -23,6 +24,7 @@ botaoVideo.addEventListener('click', () => {
     botaoDocumento.classList.remove("bg-[#120052]",  "rounded-full");
     botaoVideo.classList.add("bg-[#120052]",  "rounded-full")
 })
+
 botaoDocumento.addEventListener('click', () => {
     // Interação entre botões de tipo de câmera e botão da câmera
     botaoCamera.classList.replace('bg-red-700', 'bg-white');
