@@ -9,6 +9,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-zinc-950: oklch(14.1% 0.005 285.823);
     --color-black: #000;
@@ -279,6 +280,9 @@
   .flex-col {
     flex-direction: column;
   }
+  .flex-row {
+    flex-direction: row;
+  }
   .flex-nowrap {
     flex-wrap: nowrap;
   }
@@ -352,6 +356,9 @@
   .border-2 {
     border-style: var(--tw-border-style);
     border-width: 2px;
+  }
+  .border-amber-300 {
+    border-color: var(--color-amber-300);
   }
   .border-gray-400 {
     border-color: var(--color-gray-400);
@@ -508,9 +515,47 @@
     --tw-scale-z: 95%;
     scale: var(--tw-scale-x) var(--tw-scale-y);
   }
+  .active\:border-amber-300:active {
+    border-color: var(--color-amber-300);
+  }
+  @media (width >= 40rem) {
+    .sm\:block {
+      display: block;
+    }
+    .sm\:flex {
+      display: flex;
+    }
+    .sm\:w-fit {
+      width: fit-content;
+    }
+    .sm\:flex-col {
+      flex-direction: column;
+    }
+    .sm\:flex-wrap {
+      flex-wrap: wrap;
+    }
+    .sm\:items-center {
+      align-items: center;
+    }
+    .sm\:justify-around {
+      justify-content: space-around;
+    }
+    .sm\:justify-center {
+      justify-content: center;
+    }
+    .sm\:justify-evenly {
+      justify-content: space-evenly;
+    }
+    .sm\:gap-2\.5 {
+      gap: calc(var(--spacing) * 2.5);
+    }
+  }
   @media (width >= 48rem) {
     .md\:w-full {
       width: 100%;
+    }
+    .md\:flex-col {
+      flex-direction: column;
     }
   }
 }
