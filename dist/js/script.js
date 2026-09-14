@@ -13,8 +13,9 @@ const caixaDica = document.querySelector('#dica-container');
 
 const paragrafoDica = document.querySelector('#dica-paragrafo');
 
+
+// Interação entre botões de tipo de câmera e botão da câmera
 botaoFoto.addEventListener('click', () => {
-    // Interação entre botões de tipo de câmera e botão da câmera
     botaoCamera.classList.replace('bg-red-700', 'bg-white');
     previewImagem.src = "./images/photo-ex1.jpg";
     botaoVideo.classList.remove("bg-[#120052]",  "rounded-full");
@@ -22,14 +23,13 @@ botaoFoto.addEventListener('click', () => {
     botaoFoto.classList.add("bg-[#120052]",  "rounded-full");
     cameraContainer.classList.remove('video');
 
-    // dica 
+    // Interatividade da dica flutuante 
     paragrafoDica.textContent = 'Que tal dar um passo para a direita?'
     caixaDica.classList.add('flex');
     caixaDica.classList.remove('hidden');
 });
 
 botaoVideo.addEventListener('click', () => {
-    // Interação entre botões de tipo de câmera e botão da câmera
     botaoCamera.classList.replace('bg-white', 'bg-red-700');
     previewImagem.src = "./images/photo-ex2.jpg";
     botaoFoto.classList.remove("bg-[#120052]",  "rounded-full");
@@ -37,7 +37,7 @@ botaoVideo.addEventListener('click', () => {
     botaoVideo.classList.add("bg-[#120052]",  "rounded-full");
     cameraContainer.classList.add('video');
 
-     // dica
+     // Interatividade da dica flutuante
     paragrafoDica.textContent = 'Estabilize um pouco o seu celular';
     caixaDica.classList.add('flex');
     caixaDica.classList.remove('hidden');
@@ -45,7 +45,6 @@ botaoVideo.addEventListener('click', () => {
 });
 
 botaoDocumento.addEventListener('click', () => {
-    // Interação entre botões de tipo de câmera e botão da câmera
     botaoCamera.classList.replace('bg-red-700', 'bg-white');
     previewImagem.src = "./images/photo-ex3.jpg";
     botaoFoto.classList.remove( "bg-[#120052]",  "rounded-full");
@@ -53,13 +52,13 @@ botaoDocumento.addEventListener('click', () => {
     botaoDocumento.classList.add("bg-[#120052]",  "rounded-full");
     cameraContainer.classList.remove('video');
 
-    // dica
+    // Interatividade da dica flutuante
     paragrafoDica.textContent = 'Que tal afastar a câmera para enquadrar todo o documento?';
     caixaDica.classList.add('flex');
     caixaDica.classList.remove('hidden');
 });
 
-// mudança de tela
+// Mudança de tela após foto tirada
 const menuClickFoto = document.querySelector('#photo-click-container');
 const menuOpcoes = document.querySelector('#opcoes-camera-container');
 const cardsSocial = document.querySelector('#social-container');
@@ -68,4 +67,11 @@ botaoCamera.addEventListener('click', () => {
     menuClickFoto.classList.add('hidden');
     menuOpcoes.classList.add('hidden');
     cardsSocial.classList.replace('hidden', 'block');
-})
+});
+
+// Botão de cancelar
+const botaoCancelar = document.querySelector('#btn-cancelar-photo');
+
+botaoCancelar.addEventListener('click', () => {
+    window.location.reload();
+});
