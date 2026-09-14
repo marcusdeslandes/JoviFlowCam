@@ -1,64 +1,33 @@
-// Pré visualiza a camera
-        let currentFacingMode = 'environment';
-        const videoPreview = document.querySelector('#video-preview');
+// Troca de botões de tipo de camera
+const botaoFoto = document.querySelector("#btn-photo");
+const botaoVideo = document.querySelector("#btn-video");
+const botaoDocumento = document.querySelector("#btn-document");
 
-        const startCamera = (facingMode = 'environment') => {
-            stopCamera();
-            navigator.mediaDevices.getUserMedia({
-                video: {
-                    facingMode,
-                    width: {
-                        max: 2532,
-                        ideal: 645
-                    },
-                    height: {
-                        max: 1170,
-                        ideal: 390
-                    }
-                }
-            }).then((stream) => {
-                videoPreview.srcObject = stream;
-            })
-        }
+const previewImagem = document.querySelector("#image-preview");
 
-        const stopCamera = () => {
-            if (videoPreview.srcObject) {
-                const stream = videoPreview.srcObject;
-                const tracks = stream.getTracks().forEach((track) => track.stop());
-            }
-        }
+const botaoCamera = document.querySelector("#btn-camera");
 
-        startCamera(currentFacingMode);
-
-        // tirar uma foto
-        const btnCamera = document.querySelector('#btn-camera');
-        const canvas = document.querySelector('#canvas');
-        const videoPreviewContainer = document.querySelector('#video-preview-container');
-        const photoPreviewContainer = document.querySelector('#photo-preview-container');
-        const photoPreview = document.querySelector('#photo-preview');
-
-        btnCamera.addEventListener('click', () => {
-            canvas.width = videoPreview.videoWidth;
-            canvas.height = videoPreview.videoHeight;
-            const context = canvas.getContext('2d');
-
-            context.drawImage(videoPreview, 0, 0);
-
-            canvas.toBlob((blob) => {
-                photoPreview.src = URL.createObjectURL(blob);
-                photoPreviewContainer.classList.replace('hidden', 'flex');
-                videoPreviewContainer.classList.toggle('hidden');
-            });
-        });
-
-        // Troca entre as cameras
-        const btnToggleCamera = document.querySelector('#btn-toggle-camera');
-        btnToggleCamera.addEventListener('click', () => {
-            if (currentFacingMode == 'environment') {
-                currentFacingMode = 'user';
-            } else {
-                currentFacingMode = 'environment'
-            }
-
-            startCamera(currentFacingMode);
-        })
+botaoFoto.addEventListener('click', () => {
+    // Interação entre botões de tipo de câmera e botão da câmera
+    botaoCamera.classList.replace('bg-red-700', 'bg-white');
+    previewImagem.src = "/dist/images/photo-ex1.jpg";
+    botaoVideo.classList.remove("px-4", "py-1" , "bg-[#120052]",  "rounded-full");
+    botaoDocumento.classList.remove("px-4", "py-1" , "bg-[#120052]",  "rounded-full");
+    botaoFoto.classList.add("px-4", "py-1" , "bg-[#120052]",  "rounded-full")
+})
+botaoVideo.addEventListener('click', () => {
+    // Interação entre botões de tipo de câmera e botão da câmera
+    botaoCamera.classList.replace('bg-white', 'bg-red-700');
+    previewImagem.src = "/dist/images/photo-ex2.jpg";
+    botaoFoto.classList.remove("px-4", "py-1" , "bg-[#120052]",  "rounded-full");
+    botaoDocumento.classList.remove("px-4", "py-1" , "bg-[#120052]",  "rounded-full");
+    botaoVideo.classList.add("px-4", "py-1" , "bg-[#120052]",  "rounded-full")
+})
+botaoDocumento.addEventListener('click', () => {
+    // Interação entre botões de tipo de câmera e botão da câmera
+    botaoCamera.classList.replace('bg-red-700', 'bg-white');
+    previewImagem.src = "/dist/images/photo-ex3.jpg";
+    botaoFoto.classList.remove("px-4", "py-1" , "bg-[#120052]",  "rounded-full");
+    botaoVideo.classList.remove("px-4", "py-1" , "bg-[#120052]",  "rounded-full");
+    botaoDocumento.classList.add("px-4", "py-1" , "bg-[#120052]",  "rounded-full")
+})
