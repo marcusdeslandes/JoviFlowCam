@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@keyframes aparecer {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+@keyframes aparecerDica {
+    from { opacity: 0 ; }
+    to { opacity: 80; }
+}
