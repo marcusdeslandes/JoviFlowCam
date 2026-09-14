@@ -8,12 +8,12 @@
                 video: {
                     facingMode,
                     width: {
-                        max: 1980,
-                        ideal: 874
+                        max: 2532,
+                        ideal: 844
                     },
                     height: {
-                        max: 1080,
-                        ideal: 402
+                        max: 1170,
+                        ideal: 390
                     }
                 }
             }).then((stream) => {
