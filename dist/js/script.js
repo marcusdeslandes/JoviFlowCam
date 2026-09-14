@@ -3,6 +3,8 @@ const botaoFoto = document.querySelector("#btn-photo");
 const botaoVideo = document.querySelector("#btn-video");
 const botaoDocumento = document.querySelector("#btn-document");
 
+const cameraContainer = document.querySelector('#camera');
+
 const previewImagem = document.querySelector("#image-preview");
 
 const botaoCamera = document.querySelector("#btn-camera");
@@ -18,6 +20,7 @@ botaoFoto.addEventListener('click', () => {
     botaoVideo.classList.remove("bg-[#120052]",  "rounded-full");
     botaoDocumento.classList.remove("bg-[#120052]",  "rounded-full");
     botaoFoto.classList.add("bg-[#120052]",  "rounded-full");
+    cameraContainer.classList.remove('video');
 
     // dica 
     paragrafoDica.textContent = 'Que tal dar um passo para a direita?'
@@ -32,6 +35,7 @@ botaoVideo.addEventListener('click', () => {
     botaoFoto.classList.remove("bg-[#120052]",  "rounded-full");
     botaoDocumento.classList.remove("bg-[#120052]",  "rounded-full");
     botaoVideo.classList.add("bg-[#120052]",  "rounded-full");
+    cameraContainer.classList.add('video');
 
      // dica
     paragrafoDica.textContent = 'Estabilize um pouco o seu celular';
@@ -47,6 +51,7 @@ botaoDocumento.addEventListener('click', () => {
     botaoFoto.classList.remove( "bg-[#120052]",  "rounded-full");
     botaoVideo.classList.remove("bg-[#120052]",  "rounded-full");
     botaoDocumento.classList.add("bg-[#120052]",  "rounded-full");
+    cameraContainer.classList.remove('video');
 
     // dica
     paragrafoDica.textContent = 'Que tal afastar a câmera para enquadrar todo o documento?';
