@@ -9,7 +9,7 @@
                     facingMode,
                     width: {
                         max: 2532,
-                        ideal: 744
+                        ideal: 645
                     },
                     height: {
                         max: 1170,
