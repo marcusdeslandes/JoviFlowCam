@@ -58,3 +58,14 @@ botaoDocumento.addEventListener('click', () => {
     caixaDica.classList.add('flex');
     caixaDica.classList.remove('hidden');
 });
+
+// mudança de tela
+const menuClickFoto = document.querySelector('#photo-click-container');
+const menuOpcoes = document.querySelector('#opcoes-camera-container');
+const cardsSocial = document.querySelector('#social-container');
+
+botaoCamera.addEventListener('click', () => {
+    menuClickFoto.classList.add('hidden');
+    menuOpcoes.classList.add('hidden');
+    cardsSocial.classList.replace('hidden', 'block');
+})

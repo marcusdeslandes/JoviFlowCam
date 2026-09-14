@@ -26,7 +26,7 @@
                 </p>
             </div>
 
-            <div class="relative top-8 z-10 flex justify-around items-center w-4/5 md:w-full">
+            <div id="photo-click-container" class="relative top-8 z-10 flex justify-around items-center w-4/5 md:w-full">
                 <i class="fa-solid fa-images text-white text-2xl"></i>
 
                 <button id="btn-camera" type="button" class="flex items-center justify-center w-18 h-18 bg-white hover:bg-gray-400 text-white rounded-full shadow-lg transition-transform active:scale-95 focus:outline-none"></button>
@@ -34,11 +34,45 @@
                 <i class="fa-solid fa-camera-rotate text-white text-3xl"></i>
             </div>
         </div>                
-        <div class="relative top-5 z-10 p-4 flex justify-around w-full">
+        <div id="opcoes-camera-container" class="relative top-5 z-10 p-4 flex justify-around w-full">
             <button id="btn-photo" class="text-white font-medium px-4 py-1 bg-[#120052] rounded-full ativo">Foto</button>
             <button id="btn-video" class="text-white font-medium px-4 py-1">Video</button>
             <button id="btn-document" class="text-white font-medium px-4 py-1">Documento</button>
         </div> 
+
+        <div id="social-container" class="text-center p-4 hidden">
+            <p>Para onde vamos enviar?</p>
+            <div class="flex flex-wrap justify-between items-center gap-2.5 p-8">
+                <button class="px-8 py-4 w-full bg-[#2A2A36] rounded-3xl flex flex-wrap items-center gap-2.5">
+                    <i class="fa-brands fa-tiktok text-4xl p-6 rounded-full bg-black" style="color: rgb(255, 255, 255);"></i>
+                    <div>
+                        <p class="text-nowrap font-medium">Otimizar para TikTok</p>
+                        <p class="text-nowrap font-extralight">Formato 9:16 + audio sicronizado</p>
+                    </div>
+                </button>
+
+                <button class="px-8 py-4 w-full bg-[#2A2A36] rounded-3xl flex flex-wrap items-center gap-2.5">
+                    <i class="fa-brands fa-instagram text-4xl p-6 rounded-full bg-black" style="color: rgb(255, 255, 255);"></i>
+                    <div>
+                        <p class="text-nowrap font-medium">Otimizar para Instagram</p>
+                        <p class="text-nowrap font-extralight">Formatar para reels ou Stories</p>                 
+                    </div>
+                </button>
+
+                <button class="px-8 py-4 w-full bg-[#2A2A36] rounded-3xl flex flex-wrap items-center gap-2.5">
+                    <i class="fa-solid fa-file-pdf text-4xl p-6 rounded-full bg-black" style="color: rgb(255, 255, 255);"></i>
+                    <div>
+                        <p class="text-nowrap font-medium">Otimizar para Documento</p>
+                        <p class="text-nowrap font-extralight">Exportar PDF limpo e alinhado</p>
+                    </div>
+                </button>
+            </div>
+            <div>
+                <button id="btn-enviar" class="px-8 py-4 bg-[#120052] rounded-4xl font-bold">
+                    Exportar e concluir
+                </button>
+            </div>
+        </div>
     </main>
     
     <script src="./js/script.js"></script>
