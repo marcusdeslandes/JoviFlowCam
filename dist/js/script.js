@@ -34,7 +34,7 @@ botaoVideo.addEventListener('click', () => {
     botaoVideo.classList.add("bg-[#120052]",  "rounded-full");
 
      // dica
-    paragrafoDica.textContent = 'Estabilize um pouco a câmera!'
+    paragrafoDica.textContent = 'Estabilize um pouco o seu celular'
     caixaDica.classList.add('flex');
     caixaDica.classList.remove('hidden');
 
@@ -49,7 +49,7 @@ botaoDocumento.addEventListener('click', () => {
     botaoDocumento.classList.add("bg-[#120052]",  "rounded-full");
 
     // dica
-    paragrafoDica.textContent = 'Afaste a câmera para enquadrar todo o documento!'
+    paragrafoDica.textContent = 'Que tal afastar a câmera para enquadrar todo o documento?'
     caixaDica.classList.add('flex');
     caixaDica.classList.remove('hidden');
 });
