@@ -15,11 +15,11 @@
     </header>
 
     <main>
-        <div id="dialog-camera" class="absolute w-screen bg-zinc-950 z-10 p-12">
+        <div id="dialog-camera" class="w-screen bg-zinc-950 z-10 p-12 items-center flex flex-col justify-center">
             <div class="flex justify-center w-full h-full" id="video-preview-container">
                 <img id="image-preview" src="./images/photo-ex1.jpg" class="w-full h-full object-cover">
             </div>
-            <div class="absolute -bottom-26 z-10 flex justify-around items-center w-4/5 landscape:flex-col-reverse landscape:right-3 landscape:w-fit landscape:top-0 landscape:bottom-0">
+            <div class="relative top-8 z-10 flex justify-around items-center w-4/5 md:w-full">
                 <i class="fa-solid fa-images text-white text-2xl"></i>
 
                 <button id="btn-camera" type="button" class="flex items-center justify-center w-18 h-18 bg-white hover:bg-gray-400 text-white rounded-full shadow-lg transition-transform active:scale-95 focus:outline-none"></button>
@@ -27,7 +27,7 @@
                 <i class="fa-solid fa-camera-rotate text-white text-3xl"></i>
             </div>
         </div>                
-        <div class="absolute z-10 bottom-5 p-4 flex justify-around items-center w-full">
+        <div class="relative z-10 p-4 flex justify-around items-end w-full">
             <button id="btn-photo" class="text-white font-medium px-4 py-1 bg-[#120052] rounded-full ativo">Foto</button>
             <button id="btn-video" class="text-white font-medium px-4 py-1">Video</button>
             <button id="btn-document" class="text-white font-medium px-4 py-1">Documento</button>
