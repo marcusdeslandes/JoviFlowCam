@@ -343,6 +343,13 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-gray-400 {
+    border-color: var(--color-gray-400);
+  }
   .bg-\[\#2A2A36\] {
     background-color: #2A2A36;
   }
