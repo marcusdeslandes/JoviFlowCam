@@ -9,11 +9,11 @@
                     facingMode,
                     width: {
                         max: 1980,
-                        ideal: 297
+                        ideal: 402
                     },
                     height: {
                         max: 1080,
-                        ideal: 420
+                        ideal: 874
                     }
                 }
             }).then((stream) => {
