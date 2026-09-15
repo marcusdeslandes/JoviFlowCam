@@ -108,7 +108,7 @@ if (botaoDocumento.classList.contains('documento')) {
     cardInstagram.classList.add('hidden');
 }
 
-// Enviar para processamento
+// Enviar para processamento / transição
 const caixaProcesso = document.querySelector('#process-container');
 const botaoEnviar = document.querySelector('#btn-enviar');
 const main = document.querySelector('#main');
