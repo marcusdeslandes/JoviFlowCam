@@ -23,6 +23,10 @@ botaoFoto.addEventListener('click', () => {
     botaoFoto.classList.add("bg-[#120052]",  "rounded-full");
     cameraContainer.classList.remove('video');
     botaoDocumento.classList.remove('documento');
+    cardTiktok.classList.remove('hidden', 'sm:hidden');
+    cardInstagram.classList.remove('hidden', 'sm:hidden');
+    cardGallery.classList.remove('hidden', 'sm:hidden');
+    cardDoc.classList.add('hidden', 'sm:hidden');
 
     // Interatividade da dica flutuante 
     paragrafoDica.textContent = 'Que tal dar um passo para a direita?'
@@ -38,7 +42,10 @@ botaoVideo.addEventListener('click', () => {
     botaoVideo.classList.add("bg-[#120052]",  "rounded-full");
     cameraContainer.classList.add('video');
     botaoDocumento.classList.remove('documento');
-
+    cardTiktok.classList.remove('hidden', 'sm:hidden');
+    cardInstagram.classList.remove('hidden', 'sm:hidden');
+    cardGallery.classList.remove('hidden', 'sm:hidden');
+    cardDoc.classList.add('hidden', 'sm:hidden');
 
      // Interatividade da dica flutuante
     paragrafoDica.textContent = 'Estabilize um pouco o seu celular';
