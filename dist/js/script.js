@@ -100,3 +100,15 @@ if (botaoDocumento.classList.contains('documento')) {
     cardTiktok.classList.add('hidden');
     cardInstagram.classList.add('hidden');
 }
+
+// Enviar para processamento
+const caixaProcesso = document.querySelector('#process-container');
+const botaoEnviar = document.querySelector('#btn-enviar');
+
+botaoEnviar.addEventListener('click', () => {
+    cardsSocial.classList.add('hidden');
+    caixaProcesso.classList.replace('hidden', 'flex');
+    setTimeout(() => {
+        caixaProcesso.classList.replace('flex', 'hidden');
+    }, 3000);
+})
