@@ -63,9 +63,11 @@ botaoDocumento.addEventListener('click', () => {
     caixaDica.classList.remove('hidden');
 
     if (botaoDocumento.classList.contains('documento')) {
-        cardTiktok.classList.add('hidden');
-        cardInstagram.classList.add('hidden');
-        cardDoc.classList.remove('hidden');
+        cardTiktok.classList.add('hidden', 'sm:hidden');
+        cardInstagram.classList.add('hidden', 'sm:hidden');
+        cardGallery.classList.add('hidden', 'sm:hidden');
+        cardDoc.classList.remove('hidden', 'sm:hidden');
+        cardsSocial.classList.add('flex', 'flex-col', 'items-center')
     }
 });
 
