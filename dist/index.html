@@ -27,13 +27,12 @@
             </div>
 
             <div id="photo-click-container" class="relative top-8 z-10 flex justify-around items-center w-4/5 md:w-full">
-                <div>
-                    <label for="selecao-galeria" class="inline-flex items-center justify-center px-6 py-3 rounded-lg cursor-pointer transition-colors duration-300 shadow-md hover:shadow-lg gap-2">
-                        <i class="fa-solid fa-images text-white text-2xl"></i>
-                    </label>
+                <label for="selecao-galeria" class="inline-flex items-center justify-center rounded-lg cursor-pointer transition-colors duration-300 shadow-md hover:shadow-lg gap-2">
+                    <i class="fa-solid fa-images text-white text-2xl"></i>
+                </label>
+
+                <input type="file" class="hidden" id="selecao-galeria" accept="image/*" multiple>
     
-                    <input type="file" class="hidden" id="selecao-galeria" accept="image/*" multiple>
-                </div>
 
                 <button id="btn-camera" type="button" class="flex items-center justify-center w-18 h-18 bg-white hover:bg-gray-400 text-white rounded-full shadow-lg transition-transform active:scale-95 focus:outline-none"></button>
                 
