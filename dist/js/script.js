@@ -22,6 +22,7 @@ botaoFoto.addEventListener('click', () => {
     botaoDocumento.classList.remove("bg-[#120052]",  "rounded-full");
     botaoFoto.classList.add("bg-[#120052]",  "rounded-full");
     cameraContainer.classList.remove('video');
+    botaoDocumento.classList.remove('documento');
 
     // Interatividade da dica flutuante 
     paragrafoDica.textContent = 'Que tal dar um passo para a direita?'
@@ -36,6 +37,8 @@ botaoVideo.addEventListener('click', () => {
     botaoDocumento.classList.remove("bg-[#120052]",  "rounded-full");
     botaoVideo.classList.add("bg-[#120052]",  "rounded-full");
     cameraContainer.classList.add('video');
+    botaoDocumento.classList.remove('documento');
+
 
      // Interatividade da dica flutuante
     paragrafoDica.textContent = 'Estabilize um pouco o seu celular';
@@ -45,17 +48,25 @@ botaoVideo.addEventListener('click', () => {
 });
 
 botaoDocumento.addEventListener('click', () => {
+    cardDoc.classList.add('documento');
     botaoCamera.classList.replace('bg-red-700', 'bg-white');
     previewImagem.src = "./images/photo-ex3.jpg";
     botaoFoto.classList.remove( "bg-[#120052]",  "rounded-full");
     botaoVideo.classList.remove("bg-[#120052]",  "rounded-full");
     botaoDocumento.classList.add("bg-[#120052]",  "rounded-full");
     cameraContainer.classList.remove('video');
+    botaoDocumento.classList.add('documento');
 
     // Interatividade da dica flutuante
     paragrafoDica.textContent = 'Que tal afastar a câmera para enquadrar todo o documento?';
     caixaDica.classList.add('flex');
     caixaDica.classList.remove('hidden');
+
+    if (botaoDocumento.classList.contains('documento')) {
+        cardTiktok.classList.add('hidden');
+        cardInstagram.classList.add('hidden');
+        cardDoc.classList.remove('hidden');
+    }
 });
 
 // Mudança de tela após foto tirada
@@ -67,6 +78,7 @@ botaoCamera.addEventListener('click', () => {
     menuClickFoto.classList.add('hidden');
     menuOpcoes.classList.add('hidden');
     cardsSocial.classList.replace('hidden', 'block');
+    caixaDica.classList.add('hidden');
 });
 
 // Botão de cancelar
@@ -75,3 +87,14 @@ const botaoCancelar = document.querySelector('#btn-cancelar-photo');
 botaoCancelar.addEventListener('click', () => {
     window.location.reload();
 });
+
+// interatividade do botão ~ cards
+const cardTiktok = document.querySelector('#card-tiktok');
+const cardInstagram = document.querySelector('#card-instagram');
+const cardDoc = document.querySelector('#card-doc');
+const cardGallery = document.querySelector('#card-gallery');
+
+if (botaoDocumento.classList.contains('documento')) {
+    cardTiktok.classList.add('hidden');
+    cardInstagram.classList.add('hidden');
+}
