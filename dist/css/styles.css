@@ -10,6 +10,8 @@
       "Courier New", monospace;
     --color-red-700: oklch(50.5% 0.213 27.518);
     --color-amber-300: oklch(87.9% 0.169 91.605);
+    --color-violet-500: oklch(60.6% 0.25 292.717);
+    --color-violet-700: oklch(49.1% 0.27 292.581);
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-zinc-950: oklch(14.1% 0.005 285.823);
     --color-black: #000;
@@ -444,9 +446,25 @@
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   @media (hover: hover) {
+    .hover\:border-amber-300:hover {
+      border-color: var(--color-amber-300);
+    }
     .hover\:bg-gray-400:hover {
       background-color: var(--color-gray-400);
     }
+  }
+  .focus\:outline-2:focus {
+    outline-style: var(--tw-outline-style);
+    outline-width: 2px;
+  }
+  .focus\:outline-offset-2:focus {
+    outline-offset: 2px;
+  }
+  .focus\:outline-violet-500:focus {
+    outline-color: var(--color-violet-500);
+  }
+  .focus\:outline-white:focus {
+    outline-color: var(--color-white);
   }
   .focus\:outline-none:focus {
     --tw-outline-style: none;
@@ -457,6 +475,20 @@
     --tw-scale-y: 95%;
     --tw-scale-z: 95%;
     scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .active\:border:active {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .active\:border-solid:active {
+    --tw-border-style: solid;
+    border-style: solid;
+  }
+  .active\:border-amber-300:active {
+    border-color: var(--color-amber-300);
+  }
+  .active\:bg-violet-700:active {
+    background-color: var(--color-violet-700);
   }
   @media (width >= 40rem) {
     .sm\:flex {
