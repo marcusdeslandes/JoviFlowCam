@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="./css/styles.css"/>
     <script src="https://kit.fontawesome.com/a86f4eb0a3.js" crossorigin="anonymous"></script>
   </head>
-  <body class="text-white bg-black">
+  <body class="text-white bg-black flex flex-col">
     <header class="bg-[#120052] py-4 px-4 w-auto flex items-center justify-center">       
         <div class="flex justify-center">
             <img src="./images/logo_jovi.png" alt="Logo da JOVI" class="w-25">
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <div id="camera" class="w-screen z-10 p-12 items-center flex flex-col justify-center">
             <div class="flex justify-center w-full h-full" id="video-preview-container">
                 <img id="image-preview" src="./images/photo-ex1.jpg" class="w-full h-full object-cover">
@@ -94,6 +94,9 @@
             </div>
         </div>
     </main>
+     <div id="check-container" class="items-center justify-center w-full h-dvh hidden">
+        <img src="./images/check.png" alt="" class=" w-1/3 bg-white rounded-full">
+    </div>
     
     <script src="./js/script.js"></script>
     

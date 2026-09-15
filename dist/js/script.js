@@ -104,11 +104,18 @@ if (botaoDocumento.classList.contains('documento')) {
 // Enviar para processamento
 const caixaProcesso = document.querySelector('#process-container');
 const botaoEnviar = document.querySelector('#btn-enviar');
+const main = document.querySelector('#main');
+const caixaCheck = document.querySelector('#check-container');
 
 botaoEnviar.addEventListener('click', () => {
     cardsSocial.classList.add('hidden');
     caixaProcesso.classList.replace('hidden', 'flex');
     setTimeout(() => {
         caixaProcesso.classList.replace('flex', 'hidden');
-    }, 3000);
+        main.classList.add('hidden');
+        caixaCheck.classList.replace('hidden', 'flex');
+    }, 4000);
+    setTimeout(() => {
+        window.location.reload();
+    }, 8000);
 })
