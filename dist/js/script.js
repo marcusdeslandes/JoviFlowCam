@@ -28,10 +28,12 @@ botaoFoto.addEventListener('click', () => {
     cardGallery.classList.remove('hidden', 'sm:hidden');
     cardDoc.classList.add('hidden', 'sm:hidden');
 
-    // Interatividade da dica flutuante 
-    paragrafoDica.textContent = 'Que tal dar um passo para a direita?'
-    caixaDica.classList.add('flex');
-    caixaDica.classList.remove('hidden');
+    // Interatividade da dica flutuante
+    setTimeout(() => {
+        paragrafoDica.textContent = 'Que tal dar um passo para a direita?'
+        caixaDica.classList.add('flex');
+        caixaDica.classList.remove('hidden');
+    }, 1000); 
 });
 
 botaoVideo.addEventListener('click', () => {
@@ -48,9 +50,11 @@ botaoVideo.addEventListener('click', () => {
     cardDoc.classList.add('hidden', 'sm:hidden');
 
      // Interatividade da dica flutuante
-    paragrafoDica.textContent = 'Estabilize um pouco o seu celular';
-    caixaDica.classList.add('flex');
-    caixaDica.classList.remove('hidden');
+     setTimeout(() => {
+         paragrafoDica.textContent = 'Estabilize um pouco o seu celular';
+         caixaDica.classList.add('flex');
+         caixaDica.classList.remove('hidden');
+     }, 1000);
 
 });
 
@@ -65,9 +69,11 @@ botaoDocumento.addEventListener('click', () => {
     botaoDocumento.classList.add('documento');
 
     // Interatividade da dica flutuante
-    paragrafoDica.textContent = 'Que tal afastar a câmera para enquadrar todo o documento?';
-    caixaDica.classList.add('flex');
-    caixaDica.classList.remove('hidden');
+    setTimeout(() => {
+        paragrafoDica.textContent = 'Que tal afastar a câmera para enquadrar todo o documento?';
+        caixaDica.classList.add('flex');
+        caixaDica.classList.remove('hidden');
+    }, 1000);
 
     if (botaoDocumento.classList.contains('documento')) {
         cardTiktok.classList.add('hidden', 'sm:hidden');
